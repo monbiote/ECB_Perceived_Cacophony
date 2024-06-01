@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/jaoss/Desktop/Data_Science/Master_Project/Git_Repository/ECB_Perceived_Cacophony/Models_Notebook/mlruns/0/fc406337d18a4409844e1f089be2e070/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fc406337d18a4409844e1f089be2e070
+run_name: ./results
+run_uuid: fc406337d18a4409844e1f089be2e070
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717239782453
+status: 1
+tags: []
+user_id: jaoss
