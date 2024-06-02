@@ -3,7 +3,7 @@ overwrite_output_dir: false
 do_train: false
 do_eval: true
 do_predict: false
-evaluation_strategy: epoch
+eval_strategy: epoch
 prediction_loss_only: false
 per_device_train_batch_size: 8
 per_device_eval_batch_size: 8
@@ -27,7 +27,7 @@ warmup_steps: 0
 log_level: passive
 log_level_replica: warning
 log_on_each_node: true
-logging_dir: ./results\runs\Jun01_14-40-16_JoaquinPC
+logging_dir: ./results\runs\Jun01_18-12-22_Joaquin
 logging_strategy: steps
 logging_first_step: false
 logging_steps: 500
@@ -38,6 +38,7 @@ save_total_limit:
 save_safetensors: true
 save_on_each_node: false
 save_only_model: false
+restore_callback_states_from_checkpoint: false
 no_cuda: false
 use_cpu: false
 use_mps_device: false
@@ -60,6 +61,7 @@ debug: []
 dataloader_drop_last: false
 eval_steps:
 dataloader_num_workers: 0
+dataloader_prefetch_factor:
 past_index: -1
 run_name: ./results
 disable_tqdm: false
@@ -74,8 +76,16 @@ fsdp_min_num_params: 0
 fsdp_config:
   min_num_params: 0
   xla: false
+  xla_fsdp_v2: false
   xla_fsdp_grad_ckpt: false
 fsdp_transformer_layer_cls_to_wrap:
+accelerator_config:
+  split_batches: false
+  dispatch_batches:
+  even_batches: true
+  use_seedable_sampler: true
+  non_blocking: false
+  gradient_accumulation_kwargs:
 deepspeed:
 label_smoothing_factor: 0.0
 optim: adamw_torch
@@ -85,8 +95,6 @@ group_by_length: false
 length_column_name: length
 report_to:
 - dvclive
-- mlflow
-- tensorboard
 ddp_find_unused_parameters:
 ddp_bucket_cap_mb:
 ddp_broadcast_buffers:
@@ -104,7 +112,9 @@ hub_always_push: false
 gradient_checkpointing: false
 gradient_checkpointing_kwargs:
 include_inputs_for_metrics: false
+eval_do_concat_batches: true
 fp16_backend: auto
+evaluation_strategy: epoch
 push_to_hub_model_id:
 push_to_hub_organization:
 push_to_hub_token: <PUSH_TO_HUB_TOKEN>
@@ -118,7 +128,9 @@ torch_compile: false
 torch_compile_backend:
 torch_compile_mode:
 dispatch_batches:
-split_batches: false
+split_batches:
 include_tokens_per_second: false
 include_num_input_tokens_seen: false
 neftune_noise_alpha:
+optim_target_modules:
+batch_eval_metrics: false
