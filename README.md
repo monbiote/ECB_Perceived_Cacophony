@@ -12,8 +12,7 @@ This repository contains the code and data for creating a Cacophony Index of Dis
 - [Usage](#usage)
 - [Results](#results)
 - [Conclusion](#conclusion)
-- [Contributing](#contributing)
-- [License](#license)
+- [Contact Information](#contact-information)
 
 ## Introduction
 
@@ -59,16 +58,19 @@ To use the code in this repository, follow these steps:
 
 2. Install the required dependencies:
     Conda environment can be set up using the ``` environment.yml ``` file
+    ```bash
+    conda env create --file environment.yml
+    ```
 
 3. Run the data preprocessing and analyze the data script:
-    ```bash
-    python ECB_Governors_Analysis/preprocess_data.ipynb
+    All the preprocessing and analysis of the data is in the notebook:
+    python ECB_Governors_Analysis/EDA_Dataset.ipynb
     ```
 
 4. Classify the articles
-    ```bash
-    python OpenAI_Classification/3000_OpenAI_API_Classification_Articles.ipynb
-    ```
+    We started doing manual classification of the articles and then asked OpenAI to classify them as well to compare with ours, all of this is the notebook:
+    python OpenAI_Classification/
+
 
 5. Train the model:
     ```bash
