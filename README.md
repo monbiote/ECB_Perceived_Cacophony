@@ -63,6 +63,7 @@ To use the code in this repository, follow these steps:
     ```
 
 3. Folders structure
+```
 ECB_Perceived_Cacophony
 └─────ECB_Governors_Analysis
 │       └─ECB_Governor_Analysis.ipynb (stores a dataset with the predicted values)
@@ -89,6 +90,7 @@ ECB_Perceived_Cacophony
 │       └─articles_scraping_translating.ipynb (stores a dataset with the predicted values)
 │       └─ECB_releases_scraping.ipynb (stores a dataset with the predicted values)
 │       └─Predictions.ipynb (stores a dataset with the predicted values)
+```
 
 ## Results
 
