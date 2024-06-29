@@ -62,25 +62,33 @@ To use the code in this repository, follow these steps:
     conda env create --file environment.yml
     ```
 
-3. Run the data preprocessing and analyze the data script:
-    All the preprocessing and analysis of the data is in the notebook:
-    python ECB_Governors_Analysis/EDA_Dataset.ipynb
-    ```
-
-4. Classify the articles
-    We started doing manual classification of the articles and then asked OpenAI to classify them as well to compare with ours, all of this is the notebook:
-    python OpenAI_Classification/
-
-
-5. Train the model:
-    ```bash
-    python Models_Notebook/bert_model.ipynb
-    ```
-
-6. Calculate the Cacophony Index:
-    ```bash
-    python scripts/calculate_index.py
-    ```
+3. Folders structure
+ECB_Perceived_Cacophony
+└─────ECB_Governors_Analysis
+│       └─ECB_Governor_Analysis.ipynb (stores a dataset with the predicted values)
+│       └─ECB_Interest_Rate_Data.ipynb (stores a dataset with the predicted values)
+│       └─ECB_Members.ipynb (stores a dataset with the predicted values)
+│       └─EDA_Dataset.ipynb (stores a dataset with the predicted values)
+└─────Models_Notebook
+│       └─bert_model.ipynb (stores a dataset with the predicted values)
+│       └─dictionary_classification_model.ipynb (stores a dataset with the predicted values)
+└─────OpenAI_Classification
+│       └─3000_OpenAI_API_Classification_Articles.ipynb (stores a dataset with the predicted values)
+│       └─ECB_Statement_Manual_Classification.ipynb (stores a dataset with the predicted values)
+│       └─Manual_Classification_Scores.ipynb (stores a dataset with the predicted values)
+│       └─OpenAI_API_Classification_Articles.ipynb (stores a dataset with the predicted values)
+│       └─Randomised_Articles_100.ipynb (stores a dataset with the predicted values)
+│       └─Randomised_Articles_3000.ipynb (stores a dataset with the predicted values)
+└─────Prediction_Results
+└─────Results_analysis
+│       └─index.ipynb (stores a dataset with the predicted values)
+│       └─merging_for_index.ipynb (stores a dataset with the predicted values)
+│       └─roberta_model_application.ipynb (stores a dataset with the predicted values)
+└─────roberta_model
+└─────Scraping
+│       └─articles_scraping_translating.ipynb (stores a dataset with the predicted values)
+│       └─ECB_releases_scraping.ipynb (stores a dataset with the predicted values)
+│       └─Predictions.ipynb (stores a dataset with the predicted values)
 
 ## Results
 
