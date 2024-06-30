@@ -77,9 +77,9 @@ ECB_Perceived_Cacophony
 │       └─Randomised_Articles_3000.ipynb (randomly select 3000 articles to test the best prompts)
 └─────Prediction_Results
 └─────Results_analysis (results analysis notebooks)
-│       └─index.ipynb (stores a dataset with the predicted values)
-│       └─merging_for_index.ipynb (stores a dataset with the predicted values)
-│       └─roberta_model_application.ipynb (stores a dataset with the predicted values)
+│       └─index.ipynb (contains the building of the cacophony index)
+│       └─merging_for_index.ipynb (merges our dataset with articles in the dataset of the monetary policy statements)
+│       └─roberta_model_application.ipynb (runs the fine tuned BertModel on the whole database)
 └─────roberta_model (stores various outputs and artifacts of the model)
 └─────Scraping (webscraping notebooks)
 │       └─articles_scraping_translating.ipynb (scrapes and translates full articles from websites)
