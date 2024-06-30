@@ -16,16 +16,11 @@ This repository contains the code and data for creating a Cacophony Index of Dis
 
 ## Introduction
 
-The aim of this project is to develop a Cacophony Index that measures the level of discordance among ECB council members based on their public statements. By analyzing news articles related to the ECB and its members, we classify these statements as hawkish, dovish, or neutral. This classification is used to calculate the Cacophony Index, which provides insights into the level of agreement or disagreement within the ECB council.
+The aim of this project is to develop a Cacophony Index that measures the level of discordance among ECB council members based on their public statements and how the media perceives it. By analyzing news articles related to the ECB and its members, we classify these statements as hawkish, dovish, or neutral. This classification is then used to build the Cacophony Index, which provides insights into the level of agreement or disagreement within the ECB council.
 
 ## Dataset
 
-The dataset consists of news articles related to the ECB and its members. These articles were collected from various sources and cover a wide range of topics related to monetary policy and economic outlooks.
-
-### Data Structure
-
-- `data/raw`: Contains the raw news articles.
-- `data/processed`: Contains the processed and labeled data.
+The dataset consists of news articles related to the ECB and its members. These articles were provided by the Strategic Communications Team of European Central Bank and cover a wide range of topics related to monetary policy and economic outlooks.
 
 ## Labeling Process
 
@@ -45,7 +40,7 @@ We fine-tuned a pre-trained BERT model using the labeled dataset to classify the
 
 ## Cacophony Index
 
-The Cacophony Index is calculated based on the classification results of the news articles. The index measures the level of discordance among the ECB council members by considering the proportion of hawkish, dovish, and neutral statements.
+The Cacophony Index is calculated based on the classification results of the news articles. The index measures the level of discordance among the ECB council members by considering the proportion of hawkish, dovish, and neutral statements as well as their discordance with ECB public statements on monetary policy.
 
 ## Usage
 
@@ -65,43 +60,42 @@ To use the code in this repository, follow these steps:
 3. Folders structure
 ```
 ECB_Perceived_Cacophony
-└─────ECB_Governors_Analysis
-│       └─ECB_Governor_Analysis.ipynb (stores a dataset with the predicted values)
-│       └─ECB_Interest_Rate_Data.ipynb (stores a dataset with the predicted values)
-│       └─ECB_Members.ipynb (stores a dataset with the predicted values)
-│       └─EDA_Dataset.ipynb (stores a dataset with the predicted values)
-└─────Models_Notebook
-│       └─bert_model.ipynb (stores a dataset with the predicted values)
-│       └─dictionary_classification_model.ipynb (stores a dataset with the predicted values)
-└─────OpenAI_Classification
-│       └─3000_OpenAI_API_Classification_Articles.ipynb (stores a dataset with the predicted values)
-│       └─ECB_Statement_Manual_Classification.ipynb (stores a dataset with the predicted values)
-│       └─Manual_Classification_Scores.ipynb (stores a dataset with the predicted values)
-│       └─OpenAI_API_Classification_Articles.ipynb (stores a dataset with the predicted values)
-│       └─Randomised_Articles_100.ipynb (stores a dataset with the predicted values)
-│       └─Randomised_Articles_3000.ipynb (stores a dataset with the predicted values)
+└─────ECB_Governors_Analysis (analysis notebooks)
+│       └─ECB_Governor_Analysis.ipynb (EDA on the on the Governing Council dataset)
+│       └─ECB_Interest_Rate_Data.ipynb (create a plot of ECB interest rates over the specified time period)
+│       └─ECB_Members.ipynb (loads the ECB Governing Council members into a dataframe)
+│       └─EDA_Dataset.ipynb (exploratory data analysis on the complete dataset)
+└─────Models_Notebook (models notebooks)
+│       └─bert_model.ipynb (bert model for classification)
+│       └─dictionary_classification_model.ipynb (dictionary rule based model for classification)
+└─────OpenAI_Classification (openai notebooks)
+│       └─3000_OpenAI_API_Classification_Articles.ipynb (applies Chat GPT to 10% of articles)
+│       └─ECB_Statement_Manual_Classification.ipynb (creates dataframe with the manual classification of ECB statements)
+│       └─Manual_Classification_Scores.ipynb (statistics of outcome of the human labelling)
+│       └─OpenAI_API_Classification_Articles.ipynb (select the best ChatGPT prompt)
+│       └─Randomised_Articles_100.ipynb (randomly select 100 articles to test the best prompts)
+│       └─Randomised_Articles_3000.ipynb (randomly select 3000 articles to test the best prompts)
 └─────Prediction_Results
-└─────Results_analysis
+└─────Results_analysis (results analysis notebooks)
 │       └─index.ipynb (stores a dataset with the predicted values)
 │       └─merging_for_index.ipynb (stores a dataset with the predicted values)
 │       └─roberta_model_application.ipynb (stores a dataset with the predicted values)
-└─────roberta_model
-└─────Scraping
-│       └─articles_scraping_translating.ipynb (stores a dataset with the predicted values)
-│       └─ECB_releases_scraping.ipynb (stores a dataset with the predicted values)
-│       └─Predictions.ipynb (stores a dataset with the predicted values)
+└─────roberta_model (stores various outputs and artifacts of the model)
+└─────Scraping (webscraping notebooks)
+│       └─articles_scraping_translating.ipynb (scrapes and translates full articles from websites)
+│       └─ECB_releases_scraping.ipynb (scrapes ECB statements on monetary policy)
 ```
 
 ## Results
 
-The results of the model training and the calculated Cacophony Index are documented in the `results` folder. This includes:
+The results of the model training and the calculated Cacophony Index are all documented in the presented paper. This includes:
 
 - Model performance metrics
 - Visualizations of the Cacophony Index over time
 
 ## Conclusion
 
-This project demonstrates the use of natural language processing and machine learning techniques to analyze public statements and measure discordance within the ECB council. The Cacophony Index provides valuable insights for economists and policymakers.
+This project demonstrates the use of natural language processing and machine learning techniques to analyze public statements and measure discordance within the ECB council. Tools like Chat-GPT4 proved to be among the most effective for this type of text analysis. A cacophony index was created to quantify discordance, with sentiment aggregated around the release dates of ECB monetary policy statements, providing valuable insights for economists and policymakers.
 
 ## Contact Information
 
