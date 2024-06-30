@@ -1,4 +1,4 @@
-# One Day at a Time Cacophony Index
+# Unified Voice or Cacophony? A Discordance Index of the European Central Bank Governing Council Members
 
 This repository contains the code and data for creating a Cacophony Index of Discordance for European Central Bank (ECB) council members. This index is part of a master's thesis project for a data science program.
 
